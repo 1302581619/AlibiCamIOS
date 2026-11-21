@@ -1,0 +1,8 @@
+# 云编译下载的中间产物（ipa 交付物放工作区，不进源码仓库）
+artifact.zip
+.auth_header
+*.ipa
+build_step5.log
+build_logs.zip
+*.xcworkspace
+DerivedData/
