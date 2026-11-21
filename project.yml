@@ -26,24 +26,10 @@ targets:
           - "Info.plist"
           - "**/*.entitlements"
     info:
+      path: AlibiCam/Info.plist
       properties:
         CFBundleDisplayName: AlibiCam
         CFBundleIdentifier: app.leo.alibi-cam-ios
-        CFBundleVersion: "1"
-        CFBundleShortVersionString: "1.0.0"
-        LSRequiresIPhoneOS: true
-        UIRequiredDeviceCapabilities:
-          - arm64
-        UILaunchScreen: {}
-        UISupportedInterfaceOrientations:
-          - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
-        UISupportedInterfaceOrientations~ipad:
-          - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationPortraitUpsideDown
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
         NSCameraUsageDescription: "AlibiCam 需要使用摄像头进行循环录像"
         NSMicrophoneUsageDescription: "AlibiCam 需要麦克风以录制现场声音"
         NSPhotoLibraryAddUsageDescription: "AlibiCam 需要将录像保存到相册"
@@ -51,3 +37,9 @@ targets:
           - audio
         UIFileSharingEnabled: true
         LSSupportsOpeningDocumentsInPlace: true
+    settings:
+      configs:
+        Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: app.leo.alibi-cam-ios
+        Release:
+          PRODUCT_BUNDLE_IDENTIFIER: app.leo.alibi-cam-ios
