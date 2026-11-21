@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 /// 视频画质档位（对应原项目 Quality）
 enum VideoQuality: String, CaseIterable, Identifiable {

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct RecorderView: View {
     @EnvironmentObject var settings: Settings

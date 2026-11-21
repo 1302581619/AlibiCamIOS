@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import AVFoundation
+import CoreMedia
 import CoreMotion
 import UIKit
 

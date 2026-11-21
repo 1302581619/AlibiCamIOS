@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import AVFoundation
 
 /// 把 AVCaptureVideoPreviewLayer 包装成 SwiftUI 视图
