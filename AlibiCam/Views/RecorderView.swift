@@ -60,7 +60,6 @@ struct RecorderView: View {
             }
             .navigationTitle("AlibiCam")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: SettingsView()) {
