@@ -1,0 +1,45 @@
+name: Build AlibiCam TrollStore IPA
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: '可选：构建后上传到此 Release 标签'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: |
+          xcodegen generate --spec project.yml
+          ls -la AlibiCam.xcodeproj
+
+      - name: Build TrollStore IPA
+        id: build
+        uses: Zeu1s/trollstore-ipa@v1
+        with:
+          project: AlibiCam.xcodeproj
+          scheme: AlibiCam
+          version: 1.0.0
+          build-number: 1
+          ipa-name: AlibiCam-trollstore.ipa
+          artifact-name: AlibiCam-ipa
+
+      - name: Upload as Release asset (optional)
+        if: ${{ github.event.inputs.release_tag != '' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.release_tag }}
+          files: ${{ steps.build.outputs.ipa-path }}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 巨魔伪签名会保留这些权限。刻意避开 dynamic-codesigning /
+	     com.apple.private.cs.debugger / com.apple.private.skip-library-validation，
+	     iOS 15 A12+ 上带这三项会闪退。 -->
+	<key>com.apple.developer.avfoundation.multitasking-camera-access</key>
+	<true/>
+</dict>
+</plist>

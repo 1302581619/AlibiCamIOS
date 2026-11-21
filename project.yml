@@ -1,0 +1,58 @@
+name: AlibiCam
+
+options:
+  deploymentTarget:
+    iOS: "15.0"
+  bundleIdPrefix: app.leo
+  generatedFiles: []
+  xcodeVersion: "15"
+
+settings:
+  PRODUCT_NAME: AlibiCam
+  IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+  CODE_SIGNING_ALLOWED: NO
+  CODE_SIGNING_REQUIRED: NO
+  SWIFT_VERSION: "5.9"
+  TARGETED_DEVICE_FAMILY: "1,2"
+  GENERATE_INFOPLIST_FILE: NO
+  ALWAYS_SEARCH_USER_PATHS: NO
+  CLANG_ENABLE_MODULES: YES
+  SWIFT_EMIT_LOC_STRINGS: YES
+
+targets:
+  AlibiCam:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: AlibiCam
+        excludes:
+          - "Info.plist"
+          - "**/*.entitlements"
+    info:
+      path: AlibiCam/Info.plist
+      properties:
+        CFBundleDisplayName: AlibiCam
+        CFBundleIdentifier: app.leo.alibi-cam-ios
+        CFBundleVersion: "1"
+        CFBundleShortVersionString: "1.0.0"
+        LSRequiresIPhoneOS: true
+        UIRequiredDeviceCapabilities:
+          - arm64
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSCameraUsageDescription: "AlibiCam 需要使用摄像头进行循环录像"
+        NSMicrophoneUsageDescription: "AlibiCam 需要麦克风以录制现场声音"
+        NSPhotoLibraryAddUsageDescription: "AlibiCam 需要将录像保存到相册"
+        UIBackgroundModes:
+          - audio
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
